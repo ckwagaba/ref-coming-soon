@@ -15,7 +15,7 @@
             <div class="logo-container"><img src="./images/logo.png" /></div>
             <div class="title">
                 <div class="heading">Join our REF. newsletters</div>
-                <div class="sub-heading">Sign up to receive a FLAT 10% off your ORDER NOW.</div>
+                <div class="sub-heading">Sign up to receive a FLAT <strong>10% off</strong> your ORDER NOW.</div>
             </div>
         </div>
     </header>
