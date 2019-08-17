@@ -43,7 +43,7 @@
                         <div class="input-group only-child">
                             <div class="input-label">Email Address</div>
                             <div class="input-field">
-                                <input type="text" placeholder="jd@janedoe.com" id="email" />
+                                <input type="email" placeholder="example@domain.com" id="email" />
                             </div>
                         </div>
                     </div>
@@ -51,14 +51,14 @@
                     <div class="input-wrapper">
                         <div class="input-group">
                             <div class="input-label">Country of Residence</div>
-                            <div class="input-field">
-                                <input type="text" placeholder="Uganda" id="country" />
+                            <div class="select-group">
+                                <?php require_once('./includes/countries.php'); ?>
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="input-label">Phone Number</div>
                             <div class="input-field">
-                                <input type="text" placeholder="+256 700 123456" id="phone" />
+                                <input type="tel" placeholder="+256 700 123456" id="phone" />
                             </div>
                         </div>
                     </div>
