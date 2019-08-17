@@ -41,12 +41,13 @@ main {
 main .wrapper {
   background: #fff;
   padding: 3rem;
+  box-sizing: border-box;
 }
 
 footer {
   display: flex;
-  justify-content: flex-end;
-  padding: 2rem 1rem;
+  justify-content: center;
+  padding: 3rem 0;
 }
 
 button {
@@ -58,11 +59,13 @@ button {
   padding: 1rem;
   font-weight: bold;
   background: #e8b42b;
+  border: 2px solid #e8b42b;
   color: #fff;
+  width: 10rem;
 }
 
 button:hover {
-  background: #ecb937;
+  background: none;
   color: #000;
 }
 
@@ -124,4 +127,36 @@ input {
 
 .only-child {
   grid-column: 1 / span 2;
+}
+
+.button-wrapper {
+  text-align: center;
+}
+
+.main-footer {
+  margin-top: 2rem;
+}
+
+.main-footer-copy {
+  text-align: center;
+  color: #9b9b9b;
+}
+
+.main-footer-logos {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social {
+  text-align: center;
+  padding: 2rem 0;
+  border-bottom: 1px solid #e8b42b;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
 }

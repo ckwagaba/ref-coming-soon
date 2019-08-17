@@ -27,13 +27,13 @@
                         <div class="input-group">
                             <div class="input-label">First Name</div>
                             <div class="input-field">
-                                <input type="text" />
+                                <input type="text" placeholder="Jane" />
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="input-label">Last Name</div>
                             <div class="input-field">
-                                <input type="text" />
+                                <input type="text" placeholder="Doe" />
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="input-group only-child">
                             <div class="input-label">Email Address</div>
                             <div class="input-field">
-                                <input type="text" />
+                                <input type="text" placeholder="jd@janedoe.com" />
                             </div>
                         </div>
                     </div>
@@ -51,13 +51,13 @@
                         <div class="input-group">
                             <div class="input-label">Phone Number</div>
                             <div class="input-field">
-                                <input type="text" />
+                                <input type="text" placeholder="+256 700 123456" />
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="input-label">Date of Birth</div>
                             <div class="input-field">
-                                <input type="text" />
+                                <input type="text" placeholder="Day - Month" />
                             </div>
                         </div>
                     </div>
@@ -66,16 +66,39 @@
                         <div class="input-group only-child">
                             <div class="input-label">Country of Residence</div>
                             <div class="input-field">
-                                <input type="text" />
+                                <input type="text" placeholder="Uganda" />
                             </div>
                         </div>
                     </div>
+
+                    <div class="button-wrapper">
+                        <button>submit</button>
+                    </div>
                 </form>
+            </div>
+
+            <div class="main-footer">
+                <div class="main-footer-copy">
+                    Be notified first when the REF. website goes live. Get a <strong>FLAT 15%</strong> Discount Shopping Voucher as our Loyal VIP Customer.
+                </div>
+                <div class="main-footer-logos">
+                    <img src="./images/cafe.png" />
+                    <img src="./images/sports.png" />
+                    <img src="./images/garden.png" />
+                </div>
             </div>
         </div>
     </main>
     <footer>
-        <div class="wrapper"></div>
+        <div class="wrapper">
+            <div class="social">
+                <img src="./images/social-pack.png" />
+            </div>
+            <div class="links">
+                <img src="./images/logotype.png" />
+                <img src="./images/logo-arrow.png" />
+            </div>
+        </div>
     </footer>
 </body>
 </html>
