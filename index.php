@@ -7,6 +7,7 @@
     <link rel="icon" href="./images/favicon.png" />
     <link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/res.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="./js/main.js"></script>
 </head>
 <body>
