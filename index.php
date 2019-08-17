@@ -57,8 +57,8 @@
                         </div>
                         <div class="input-group">
                             <div class="input-label">Date of Birth</div>
-                            <div class="input-field">
-                                <input type="text" placeholder="Day - Month" id="dob" />
+                            <div class="select-group">
+                                <?php require_once('./includes/months.php'); ?>
                             </div>
                         </div>
                     </div>
