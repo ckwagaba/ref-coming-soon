@@ -9,6 +9,8 @@ window.onload = function() {
   $("submit-button").addEventListener("click", function(event) {
     event.preventDefault();
 
+    const submitButton = this;
+
     /** get data values */
     var firstName = $("first-name").value;
     var lastName = $("last-name").value;
@@ -37,25 +39,38 @@ window.onload = function() {
         }
       };
 
-      console.log(data);
-
       /** spinner widget */
       var spinner = _$("div");
       spinner.classList.add("spinner");
 
       // button label is spinner
-      this.innerHTML = spinner.outerHTML;
+      submitButton.innerHTML = spinner.outerHTML;
 
       // send data
-      ajaxRequest("POST", "./save-customer", data, function() {
-        $("form-feedback").classList.add("success");
-        $("form-feedback").innerHTML = "Customer successfully added.";
+      ajaxRequest("POST", "./save-customer", data, function(res) {
+        if (res == 1) {
+          // success
+          $("form-feedback").classList.add("success");
+          $("form-feedback").innerHTML = "Customer successfully added.";
 
-        // allow user to read message
-        setTimeout(function() {
-          // refresh
-          window.location.href = "./";
-        }, 1000);
+          // allow user to read message
+          setTimeout(function() {
+            // refresh
+            window.location.href = "./";
+          }, 1000);
+        } else {
+          $("form-feedback").classList.add("failure");
+          $("form-feedback").innerHTML =
+            "Something went wrong. Please try again.";
+
+          // reset message field
+          setTimeout(function() {
+            $("form-feedback").classList.remove("failure");
+            $("form-feedback").innerHTML = "&nbsp;";
+            // reset button label
+            submitButton.innerHTML = "submit";
+          }, 2000);
+        }
       });
     } else {
       // validation failure
