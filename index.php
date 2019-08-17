@@ -50,24 +50,25 @@
 
                     <div class="input-wrapper">
                         <div class="input-group">
-                            <div class="input-label">Phone Number</div>
+                            <div class="input-label">Country of Residence</div>
                             <div class="input-field">
-                                <input type="text" placeholder="+256 700 123456" id="phone" />
+                                <input type="text" placeholder="Uganda" id="country" />
                             </div>
                         </div>
                         <div class="input-group">
-                            <div class="input-label">Date of Birth</div>
-                            <div class="select-group">
-                                <?php require_once('./includes/months.php'); ?>
+                            <div class="input-label">Phone Number</div>
+                            <div class="input-field">
+                                <input type="text" placeholder="+256 700 123456" id="phone" />
                             </div>
                         </div>
                     </div>
 
                     <div class="input-wrapper">
                         <div class="input-group only-child">
-                            <div class="input-label">Country of Residence</div>
-                            <div class="input-field">
-                                <input type="text" placeholder="Uganda" id="country" />
+                            <div class="input-label">Date of Birth</div>
+                            <div class="select-group">
+                                <?php require_once('./includes/months.php'); ?>
+                                <?php require_once('./includes/days.php'); ?>
                             </div>
                         </div>
                     </div>

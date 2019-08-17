@@ -3,6 +3,128 @@
  * to avoid calling elements that haven't been loaded into the DOM yet
  */
 window.onload = function() {
+  /** months list */
+  var monthsList = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  for (var i in monthsList) {
+    // create list item
+    var listItem = _$("option");
+
+    // give it a class
+    listItem.classList.add("md-select-component-item");
+
+    // update value
+    listItem.value = i;
+    listItem.innerHTML = monthsList[i];
+
+    // add item to list
+    $("md-select-component-month").appendChild(listItem);
+  }
+
+  /**
+   * clicking the month
+   * change number of days in month
+   */
+  $("md-select-month")
+    .querySelector("select")
+    .addEventListener("change", function() {
+      // set days of months
+      switch (Number(this.value)) {
+        case 0:
+          // January
+          setMaxDays(31);
+          break;
+
+        case 1:
+          // February
+          setMaxDays(29);
+          break;
+
+        case 2:
+          // March
+          setMaxDays(31);
+          break;
+
+        case 3:
+          // April
+          setMaxDays(30);
+          break;
+
+        case 4:
+          // May
+          setMaxDays(31);
+          break;
+
+        case 5:
+          // June
+          setMaxDays(30);
+          break;
+
+        case 6:
+          // July
+          setMaxDays(31);
+          break;
+
+        case 7:
+          // August
+          setMaxDays(31);
+          break;
+
+        case 8:
+          // September
+          setMaxDays(30);
+          break;
+
+        case 9:
+          // October
+          setMaxDays(31);
+          break;
+
+        case 10:
+          // November
+          setMaxDays(30);
+          break;
+
+        case 11:
+          // December
+          setMaxDays(31);
+          break;
+      }
+    });
+
+  /**
+   * set max days in month
+   * @function
+   * @param {number} numberOfDays
+   */
+  function setMaxDays(numberOfDays) {
+    // reset options
+    var daySelectComponent = $("md-select-day").querySelector("select");
+    daySelectComponent.innerHTML = `<option selected disabled class="md-select-label" id="md-select-label-day">Day</option>`;
+
+    for (var i = 0; i < numberOfDays; i++) {
+      var option = _$("option");
+      option.classList.add("md-select-component-item");
+      option.value = i + 1;
+      option.innerHTML = i + 1;
+
+      daySelectComponent.appendChild(option);
+    }
+  }
+
   /**
    * clicking the submit button
    */
