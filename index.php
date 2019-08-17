@@ -27,13 +27,13 @@
                         <div class="input-group">
                             <div class="input-label">First Name</div>
                             <div class="input-field">
-                                <input type="text" placeholder="Jane" />
+                                <input type="text" placeholder="Jane" id="first-name" />
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="input-label">Last Name</div>
                             <div class="input-field">
-                                <input type="text" placeholder="Doe" />
+                                <input type="text" placeholder="Doe" id="last-name" />
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="input-group only-child">
                             <div class="input-label">Email Address</div>
                             <div class="input-field">
-                                <input type="text" placeholder="jd@janedoe.com" />
+                                <input type="text" placeholder="jd@janedoe.com" id="email" />
                             </div>
                         </div>
                     </div>
@@ -51,13 +51,13 @@
                         <div class="input-group">
                             <div class="input-label">Phone Number</div>
                             <div class="input-field">
-                                <input type="text" placeholder="+256 700 123456" />
+                                <input type="text" placeholder="+256 700 123456" id="phone" />
                             </div>
                         </div>
                         <div class="input-group">
                             <div class="input-label">Date of Birth</div>
                             <div class="input-field">
-                                <input type="text" placeholder="Day - Month" />
+                                <input type="text" placeholder="Day - Month" id="dob" />
                             </div>
                         </div>
                     </div>
@@ -66,14 +66,16 @@
                         <div class="input-group only-child">
                             <div class="input-label">Country of Residence</div>
                             <div class="input-field">
-                                <input type="text" placeholder="Uganda" />
+                                <input type="text" placeholder="Uganda" id="country" />
                             </div>
                         </div>
                     </div>
 
                     <div class="button-wrapper">
-                        <button>submit</button>
+                        <button id="submit-button">submit</button>
                     </div>
+
+                    <div id="form-feedback">&nbsp;</div>
                 </form>
             </div>
 
