@@ -19,7 +19,7 @@ window.onload = function() {
     "December"
   ];
 
-  for (var i in monthsList) {
+  for (var i of monthsList) {
     // create list item
     var listItem = _$("option");
 
@@ -28,7 +28,7 @@ window.onload = function() {
 
     // update value
     listItem.value = i;
-    listItem.innerHTML = monthsList[i];
+    listItem.innerHTML = i;
 
     // add item to list
     $("md-select-component-month").appendChild(listItem);
@@ -42,64 +42,52 @@ window.onload = function() {
     .querySelector("select")
     .addEventListener("change", function() {
       // set days of months
-      switch (Number(this.value)) {
-        case 0:
-          // January
+      switch (this.value) {
+        case "January":
           setMaxDays(31);
           break;
 
-        case 1:
-          // February
+        case "February":
           setMaxDays(29);
           break;
 
-        case 2:
-          // March
+        case "March":
           setMaxDays(31);
           break;
 
-        case 3:
-          // April
+        case "April":
           setMaxDays(30);
           break;
 
-        case 4:
-          // May
+        case "May":
           setMaxDays(31);
           break;
 
-        case 5:
-          // June
+        case "June":
           setMaxDays(30);
           break;
 
-        case 6:
-          // July
+        case "July":
           setMaxDays(31);
           break;
 
-        case 7:
-          // August
+        case "August":
           setMaxDays(31);
           break;
 
-        case 8:
-          // September
+        case "September":
           setMaxDays(30);
           break;
 
-        case 9:
-          // October
+        case "October":
           setMaxDays(31);
           break;
 
-        case 10:
-          // November
+        case "November":
           setMaxDays(30);
           break;
 
-        case 11:
-          // December
+        case "December":
           setMaxDays(31);
           break;
       }
@@ -113,7 +101,6 @@ window.onload = function() {
   function setMaxDays(numberOfDays) {
     // reset options
     var daySelectComponent = $("md-select-day").querySelector("select");
-    daySelectComponent.innerHTML = `<option selected disabled class="md-select-label" id="md-select-label-day">Day</option>`;
 
     for (var i = 0; i < numberOfDays; i++) {
       var option = _$("option");
@@ -150,8 +137,10 @@ window.onload = function() {
     var lastName = $("last-name").value;
     var email = $("email").value;
     var phone = $("phone").value;
-    var dateOfBirth = $("dob").value;
-    var country = $("country").value;
+    var month = $("md-select-month").querySelector("select").value;
+    var day = $("md-select-day").querySelector("select").value;
+    var dateOfBirth = month + " - " + day;
+    var country = $("md-select-country").querySelector("select").value;
 
     /** validate and send data */
     if (
@@ -159,7 +148,8 @@ window.onload = function() {
       isValid(lastName) &&
       isValid(email) &&
       isValid(phone) &&
-      isValid(dateOfBirth) &&
+      isValid(month) &&
+      isValid(day) &&
       isValid(country)
     ) {
       var data = {
