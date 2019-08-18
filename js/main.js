@@ -126,6 +126,18 @@ window.onload = function() {
   }
 
   /**
+   * clicking the country
+   * update phone field with dial code
+   */
+  $("md-select-country")
+    .querySelector("select")
+    .addEventListener("change", function() {
+      $("phone").value = this.options[this.selectedIndex].getAttribute(
+        "data-dial-code"
+      );
+    });
+
+  /**
    * clicking the submit button
    */
   $("submit-button").addEventListener("click", function(event) {
