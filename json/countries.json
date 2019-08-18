@@ -26,7 +26,7 @@
   { "name": "Bermuda", "dial_code": "+1441", "code": "BM" },
   { "name": "Bhutan", "dial_code": "+975", "code": "BT" },
   {
-    "name": "Bolivia, Plurinational State of bolivia",
+    "name": "Bolivia",
     "dial_code": "+591",
     "code": "BO"
   },
@@ -58,7 +58,7 @@
   { "name": "Comoros", "dial_code": "+269", "code": "KM" },
   { "name": "Congo", "dial_code": "+242", "code": "CG" },
   {
-    "name": "Congo, The Democratic Republic of the Congo",
+    "name": "Congo (DRC)",
     "dial_code": "+243",
     "code": "CD"
   },
@@ -122,7 +122,7 @@
   { "name": "India", "dial_code": "+91", "code": "IN" },
   { "name": "Indonesia", "dial_code": "+62", "code": "ID" },
   {
-    "name": "Iran, Islamic Republic of Persian Gulf",
+    "name": "Iran",
     "dial_code": "+98",
     "code": "IR"
   },
@@ -139,12 +139,12 @@
   { "name": "Kenya", "dial_code": "+254", "code": "KE" },
   { "name": "Kiribati", "dial_code": "+686", "code": "KI" },
   {
-    "name": "Korea, Democratic People's Republic of Korea",
+    "name": "Korea (DPRK)",
     "dial_code": "+850",
     "code": "KP"
   },
   {
-    "name": "Korea, Republic of South Korea",
+    "name": "South Korea",
     "dial_code": "+82",
     "code": "KR"
   },
@@ -175,7 +175,7 @@
   { "name": "Mayotte", "dial_code": "+262", "code": "YT" },
   { "name": "Mexico", "dial_code": "+52", "code": "MX" },
   {
-    "name": "Micronesia, Federated States of Micronesia",
+    "name": "Micronesia",
     "dial_code": "+691",
     "code": "FM"
   },
@@ -205,7 +205,7 @@
   { "name": "Pakistan", "dial_code": "+92", "code": "PK" },
   { "name": "Palau", "dial_code": "+680", "code": "PW" },
   {
-    "name": "Palestinian Territory, Occupied",
+    "name": "Palestine",
     "dial_code": "+970",
     "code": "PS"
   },
@@ -225,7 +225,7 @@
   { "name": "Reunion", "dial_code": "+262", "code": "RE" },
   { "name": "Saint Barthelemy", "dial_code": "+590", "code": "BL" },
   {
-    "name": "Saint Helena, Ascension and Tristan Da Cunha",
+    "name": "Saint Helena",
     "dial_code": "+290",
     "code": "SH"
   },
@@ -270,7 +270,7 @@
   { "name": "Taiwan", "dial_code": "+886", "code": "TW" },
   { "name": "Tajikistan", "dial_code": "+992", "code": "TJ" },
   {
-    "name": "Tanzania, United Republic of Tanzania",
+    "name": "Tanzania",
     "dial_code": "+255",
     "code": "TZ"
   },
@@ -294,7 +294,7 @@
   { "name": "Uzbekistan", "dial_code": "+998", "code": "UZ" },
   { "name": "Vanuatu", "dial_code": "+678", "code": "VU" },
   {
-    "name": "Venezuela, Bolivarian Republic of Venezuela",
+    "name": "Venezuela",
     "dial_code": "+58",
     "code": "VE"
   },
