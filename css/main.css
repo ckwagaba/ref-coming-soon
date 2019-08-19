@@ -1,15 +1,32 @@
+@font-face {
+  font-family: Qanelas;
+  src: url("../fonts/QanelasSoft-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Qanelas;
+  font-weight: 600;
+  src: url("../fonts/QanelasSoft-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Qanelas;
+  font-weight: 900;
+  src: url("../fonts/QanelasSoft-ExtraBold.otf") format("opentype");
+}
+
 body {
   margin: 0;
   background: url("../images/bg-pattern.png");
   color: #000;
-  font-family: "proxima-nova", Arial, Helvetica, sans-serif;
+  font-family: "Qanelas", "proxima-nova", Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
 }
 
 a {
   color: #e8b42b;
-  font-weight: bold;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -57,7 +74,8 @@ button {
   appearance: none;
   border: 0;
   padding: 1rem;
-  font-weight: bold;
+  font-family: inherit;
+  font-weight: 600;
   background: #e8b42b;
   border: 2px solid #e8b42b;
   color: #000;
@@ -89,7 +107,7 @@ button:focus {
 
 .heading {
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 900;
 }
 
 .sub-heading {
@@ -116,7 +134,7 @@ form {
 .input-label {
   color: #000;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 0.8rem;
 }
 
@@ -126,6 +144,7 @@ input {
   margin: 0.5rem 0;
   color: #000;
   font-size: inherit;
+  font-family: inherit;
   width: 100%;
   box-sizing: border-box;
 }
@@ -227,6 +246,7 @@ input {
   appearance: none;
   padding: 10px;
   font-size: inherit;
+  font-weight: inherit;
   border: 2px solid #e5e5e5;
   height: calc(100% - 2px);
 }
