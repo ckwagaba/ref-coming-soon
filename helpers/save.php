@@ -10,9 +10,9 @@ $form_data = $_POST['formData'];
 try {
     // secrets
     $host = 'localhost';
-    $dbname = 'ref_customer';
-    $user = 'plus256_db_admin';
-    $password = '^RpF^PIue3Uo';
+    $dbname = 'newsletter';
+    $user = 'root';
+    $password = 'Y"a/4U)4k,4>=>Fv';
 
     // establish connection
     $pdo = new PDO('mysql:host=' . $host . ';dbname=' . $dbname . '', $user, $password);
