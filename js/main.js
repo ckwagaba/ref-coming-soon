@@ -121,9 +121,8 @@ window.onload = function() {
     $("md-select-country")
       .querySelector("select")
       .addEventListener("change", function() {
-        $("phone").value = this.options[this.selectedIndex].getAttribute(
-          "data-dial-code"
-        );
+        $("phone").value =
+          this.options[this.selectedIndex].getAttribute("data-dial-code") + " ";
       });
 
     /**
