@@ -4,7 +4,7 @@ try {
     $host = 'localhost';
     $dbname = 'newsletter';
     $user = 'root';
-    $password = '#@Psalm{100}'; // Y"a/4U)4k,4>=>Fv
+    $password = 'Y"a/4U)4k,4>=>Fv'; //#@Psalm{100}
 
     // establish connection
     $pdo = new PDO('mysql:host=' . $host . ';dbname=' . $dbname . '', $user, $password);
