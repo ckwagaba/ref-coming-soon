@@ -177,7 +177,9 @@ input {
 }
 
 .social {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem 0;
   border-bottom: 1px solid #e8b42b;
 }

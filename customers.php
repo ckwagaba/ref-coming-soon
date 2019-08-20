@@ -1,6 +1,7 @@
 <?php
 require_once('./includes/meta.php');
 ?>
+<div id="customer-page">
 <header>
     <div class="wrapper"></div>
 </header>
@@ -12,6 +13,7 @@ require_once('./includes/meta.php');
         ?>
     </div>
 </main>
+</div>
 <?php
 require_once('./includes/footer.php');
 ?>
