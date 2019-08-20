@@ -85,7 +85,7 @@
 
             <div class="main-footer">
                 <div class="main-footer-copy">
-                    Be notified first when the REF. website goes live. Get a <strong>FLAT 15%</strong> Discount Shopping Voucher as our Loyal VIP Customer.
+                    Be notified first when the REF. website goes live. <br />Get a <strong>FLAT 15%</strong> Discount Shopping Voucher as our Loyal VIP Customer.
                 </div>
                 <div class="main-footer-logos">
                     <?php
@@ -102,8 +102,8 @@
             <div class="social">
                 <?php
                 echo file_get_contents("./images/facebook.svg");
-                echo file_get_contents("./images/youtube.svg");
                 echo file_get_contents("./images/instagram.svg");
+                echo file_get_contents("./images/youtube.svg");
                 ?>
             </div>
             <div class="links">

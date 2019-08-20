@@ -76,9 +76,10 @@ button {
   padding: 1rem;
   font-family: inherit;
   font-weight: 600;
+  font-size: inherit;
   background: #e8b42b;
   border: 2px solid #e8b42b;
-  color: #000;
+  color: #fff;
   width: 10rem;
   height: 3.5rem;
   display: inline-flex;
@@ -88,6 +89,7 @@ button {
 
 button:hover {
   background: none;
+  color: #000;
 }
 
 textarea:focus,
