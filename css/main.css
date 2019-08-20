@@ -291,3 +291,59 @@ input {
 .material-icons {
   color: #bbb8b8;
 }
+
+#customer-page .wrapper {
+  width: 70%;
+}
+
+.list-layout {
+  flex: 1;
+}
+
+.list-header {
+  background: #555;
+  color: #fff;
+  display: flex;
+  font-weight: bold;
+}
+
+.list-header > div {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-header > div:first-of-type {
+  justify-content: flex-start;
+}
+
+.list-header > div:last-of-type {
+  justify-content: flex-end;
+}
+
+.list-item {
+  background: #ddd;
+  display: flex;
+}
+
+.list-item > div {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-item > div:first-of-type {
+  justify-content: flex-start;
+}
+
+.list-item > div:last-of-type {
+  justify-content: flex-end;
+}
+
+.list-item:nth-child(even) {
+  background: #ccc;
+}
