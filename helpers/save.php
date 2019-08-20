@@ -7,6 +7,7 @@ $_POST = json_decode($data, true);
 
 $form_data = $_POST['formData'];
 
+// make db connection
 require_once('db.php');
 
 // save customer

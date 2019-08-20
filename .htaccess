@@ -3,3 +3,4 @@ Options -Indexes
 RewriteEngine On
 
 RewriteRule ^save-customer$ ./helpers/save.php [NC,L]
+RewriteRule ^customers$ ./customers.php [NC,L]
