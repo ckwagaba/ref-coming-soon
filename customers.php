@@ -21,7 +21,7 @@ require_once('./includes/meta.php');
         /**
          * get list of customers
          */
-        $customers = $pdo->query('SELECT * FROM customer')->fetchAll(PDO::FETCH_ASSOC);
+        $customers = $pdo->query('SELECT * FROM customer ORDER BY id DESC')->fetchAll(PDO::FETCH_ASSOC);
         $list_container = '<div class="list-layout">';
             // header
             $list_container_header = '<div class="list-header">';
