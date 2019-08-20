@@ -97,8 +97,9 @@ button:focus {
   outline: none;
 }
 
-.logo-container img {
-  display: block;
+.logo-container svg {
+  width: 5rem;
+  height: auto;
 }
 
 .title {
@@ -168,10 +169,21 @@ input {
   justify-content: space-between;
 }
 
+.main-footer-logos svg {
+  width: auto;
+  height: 2rem;
+}
+
 .social {
   text-align: center;
   padding: 2rem 0;
   border-bottom: 1px solid #e8b42b;
+}
+
+.social svg {
+  width: auto;
+  height: 1.5rem;
+  margin: 0 1rem;
 }
 
 .links {
@@ -179,6 +191,16 @@ input {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 0;
+}
+
+.links svg:first-of-type {
+  width: auto;
+  height: 1rem;
+}
+
+.links svg:last-of-type {
+  width: auto;
+  height: 3rem;
 }
 
 #form-feedback {

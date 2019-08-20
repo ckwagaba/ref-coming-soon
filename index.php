@@ -13,7 +13,9 @@
 <body>
     <header>
         <div class="wrapper">
-            <div class="logo-container"><img src="./images/logo.png" /></div>
+            <div class="logo-container">
+                <?php echo file_get_contents("./images/logo.svg"); ?>
+            </div>
             <div class="title">
                 <div class="heading">Join our REF. newsletters</div>
                 <div class="sub-heading">Sign up to receive a FLAT <strong>10% off</strong> your ORDER NOW.</div>
@@ -86,9 +88,11 @@
                     Be notified first when the REF. website goes live. Get a <strong>FLAT 15%</strong> Discount Shopping Voucher as our Loyal VIP Customer.
                 </div>
                 <div class="main-footer-logos">
-                    <img src="./images/cafe.png" />
-                    <img src="./images/sports.png" />
-                    <img src="./images/garden.png" />
+                    <?php
+                    echo file_get_contents("./images/cafe.svg");
+                    echo file_get_contents("./images/sports.svg");
+                    echo file_get_contents("./images/garden.svg");
+                    ?>
                 </div>
             </div>
         </div>
@@ -96,11 +100,17 @@
     <footer>
         <div class="wrapper">
             <div class="social">
-                <img src="./images/social-pack.png" />
+                <?php
+                echo file_get_contents("./images/facebook.svg");
+                echo file_get_contents("./images/youtube.svg");
+                echo file_get_contents("./images/instagram.svg");
+                ?>
             </div>
             <div class="links">
-                <img src="./images/logotype.png" />
-                <img src="./images/logo-arrow.png" />
+                <?php
+                echo file_get_contents("./images/logotype.svg");
+                echo file_get_contents("./images/logo-arrow.svg");
+                ?>
             </div>
         </div>
     </footer>
