@@ -30,11 +30,26 @@ require_once('./includes/meta.php');
                 $list_container_header .= '<div>Phone Number</div>';
                 $list_container_header .= '<div>Date of Birth</div>';
                 $list_container_header .= '<div>Country</div>';
+                $list_container_header .= '<div>Cafe Subscribed</div>';
+                $list_container_header .= '<div>Sports Subscribed</div>';
             $list_container_header .= '</div>';
 
             // main
             $list_container_main = '<div class="list-main">';
                 foreach ($customers as $customer) {
+                    /** translate booleans */
+                    if ($customer['cafesub'] == 1) {
+                        $customer['cafesub'] = 'Yes';
+                    } else {
+                        $customer['cafesub'] = 'No';
+                    }
+
+                    if ($customer['sportssub'] == 1) {
+                        $customer['sportssub'] = 'Yes';
+                    } else {
+                        $customer['sportssub'] = 'No';
+                    }
+
                     // list item
                     $list_item = '<div class="list-item">';
                         $list_item .= '<div>' . $customer['firstname'] . ' ' . $customer['lastname'] . '</div>';
@@ -42,6 +57,8 @@ require_once('./includes/meta.php');
                         $list_item .= '<div>' . $customer['phone'] . '</div>';
                         $list_item .= '<div>' . $customer['dob'] . '</div>';
                         $list_item .= '<div>' . $customer['country'] . '</div>';
+                        $list_item .= '<div>' . $customer['cafesub'] . '</div>';
+                        $list_item .= '<div>' . $customer['sportssub'] . '</div>';
                     $list_item .= '</div>';
                     // add item to list
                     $list_container_main .= $list_item;
