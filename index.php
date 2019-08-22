@@ -74,7 +74,7 @@ require_once('./includes/meta.php');
                                 <input type="checkbox" id="cafe-subscription" />
                                 <div class="check-mark-wrapper"><?php echo file_get_contents("./images/check.svg"); ?></div>
                             </div>
-                            <div class="checkbox-label">Subscribe to <strong>REF. CAFE</strong> newsletters.</div>
+                            <div class="checkbox-label">Subscribe to <strong>REF. CAF&Eacute;</strong> newsletters.</div>
                         </div>
                         <div class="checkbox-wrapper">
                             <div class="checkbox">
