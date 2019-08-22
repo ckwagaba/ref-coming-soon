@@ -11,7 +11,7 @@ $form_data = $_POST['formData'];
 require_once('db.php');
 
 // save customer
-$sql = 'INSERT INTO customer (firstname, lastname, email, phone, dob, country) VALUES (?, ?, ?, ?, ?, ?)';
+$sql = 'INSERT INTO customer (firstname, lastname, email, phone, dob, country, cafesub, sportssub) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
 $stmt = $pdo->prepare($sql);
 $stmt->execute([
     $form_data['firstName'],
@@ -19,7 +19,9 @@ $stmt->execute([
     $form_data['email'],
     $form_data['phone'],
     $form_data['dateOfBirth'],
-    $form_data['country']
+    $form_data['country'],
+    $form_data['cafeSubscription'],
+    $form_data['sportsSubscription']
 ]);
 if ($stmt->rowCount() == 1) {
     echo 1;

@@ -6,7 +6,7 @@ window.onload = function() {
   // code for homepage - my way of namespacing
   if ($("home-page")) {
     /** months list */
-    var monthsList = [
+    const monthsList = [
       "January",
       "February",
       "March",
@@ -21,9 +21,9 @@ window.onload = function() {
       "December"
     ];
 
-    for (var i of monthsList) {
+    for (const i of monthsList) {
       // create list item
-      var listItem = _$("option");
+      const listItem = _$("option");
 
       // give it a class
       listItem.classList.add("md-select-component-item");
@@ -102,10 +102,10 @@ window.onload = function() {
      */
     function setMaxDays(numberOfDays) {
       // reset options
-      var daySelectComponent = $("md-select-day").querySelector("select");
+      const daySelectComponent = $("md-select-day").querySelector("select");
 
-      for (var i = 0; i < numberOfDays; i++) {
-        var option = _$("option");
+      for (let i = 0; i < numberOfDays; i++) {
+        const option = _$("option");
         option.classList.add("md-select-component-item");
         option.value = i + 1;
         option.innerHTML = i + 1;
@@ -126,6 +126,24 @@ window.onload = function() {
       });
 
     /**
+     * clicking the newsletter subscription checkboxes
+     * toggle visibility of the check mark
+     */
+    Array.prototype.forEach.call(_("checkbox"), function(
+      element,
+      index,
+      allElements
+    ) {
+      element.querySelector("input").addEventListener("change", function() {
+        if (this.checked) {
+          element.classList.add("checked");
+        } else {
+          element.classList.remove("checked");
+        }
+      });
+    });
+
+    /**
      * clicking the submit button
      */
     $("submit-button").addEventListener("click", function(event) {
@@ -134,31 +152,35 @@ window.onload = function() {
       const submitButton = this;
 
       /** get data values */
-      var firstName = $("first-name").value;
-      var lastName = $("last-name").value;
-      var email = $("email").value;
-      var phone = $("phone").value;
-      var month = $("md-select-month").querySelector("select").value;
-      var day = $("md-select-day").querySelector("select").value;
-      var year = $("md-select-year").querySelector("select").value;
-      var dateOfBirth = month + " - " + day + " - " + year;
-      var country = $("md-select-country").querySelector("select").value;
+      const firstName = $("first-name").value;
+      const lastName = $("last-name").value;
+      const email = $("email").value;
+      const phone = $("phone").value;
+      const month = $("md-select-month").querySelector("select").value;
+      const day = $("md-select-day").querySelector("select").value;
+      const year = $("md-select-year").querySelector("select").value;
+      const dateOfBirth = month + " - " + day + " - " + year;
+      const country = $("md-select-country").querySelector("select").value;
+      const cafeSubscription = $("cafe-subscription").checked ? 1 : 0;
+      const sportsSubscription = $("sports-subscription").checked ? 1 : 0;
 
       /** validate and send data */
       if (isValid(firstName) && isValid(lastName) && isValid(email)) {
-        var data = {
+        const data = {
           formData: {
             firstName,
             lastName,
             email,
             phone,
             dateOfBirth,
-            country
+            country,
+            cafeSubscription,
+            sportsSubscription
           }
         };
 
         /** spinner widget */
-        var spinner = _$("div");
+        const spinner = _$("div");
         spinner.classList.add("spinner");
 
         // button label is spinner
@@ -169,7 +191,8 @@ window.onload = function() {
           if (res == 1) {
             // success
             $("form-feedback").classList.add("success");
-            $("form-feedback").innerHTML = "Customer successfully added.";
+            $("form-feedback").innerHTML =
+              "Congratulations! You are now our loyal VIP customer.";
 
             // allow user to read message
             setTimeout(function() {
@@ -193,7 +216,7 @@ window.onload = function() {
       } else {
         // validation failure
         $("form-feedback").classList.add("failure");
-        $("form-feedback").innerHTML = "Please provide all the details.";
+        $("form-feedback").innerHTML = "Please provide the required details.";
 
         // reset message field
         setTimeout(function() {
@@ -244,7 +267,7 @@ function isValid(data) {
  * @param {function} onSuccess - callback to handle successful request
  */
 function ajaxRequest(type, url, data, onSuccess) {
-  var xhr = new XMLHttpRequest();
+  const xhr = new XMLHttpRequest();
   xhr.open(type, url);
   xhr.setRequestHeader("Content-Type", "application/json");
   xhr.onload = function() {

@@ -19,24 +19,24 @@ require_once('./includes/meta.php');
             <form action="" method="POST">
                 <div class="input-wrapper">
                     <div class="input-group">
-                        <div class="input-label">First Name</div>
+                        <div class="input-label">First Name *</div>
                         <div class="input-field">
-                            <input type="text" placeholder="Jane" id="first-name" />
+                            <input type="text" placeholder="Jane" id="first-name" required />
                         </div>
                     </div>
                     <div class="input-group">
-                        <div class="input-label">Last Name</div>
+                        <div class="input-label">Last Name *</div>
                         <div class="input-field">
-                            <input type="text" placeholder="Doe" id="last-name" />
+                            <input type="text" placeholder="Doe" id="last-name" required />
                         </div>
                     </div>
                 </div>
 
                 <div class="input-wrapper">
                     <div class="input-group only-child">
-                        <div class="input-label">Email Address</div>
+                        <div class="input-label">Email Address *</div>
                         <div class="input-field">
-                            <input type="email" placeholder="example@domain.com" id="email" />
+                            <input type="email" placeholder="example@domain.com" id="email" required />
                         </div>
                     </div>
                 </div>
@@ -63,6 +63,25 @@ require_once('./includes/meta.php');
                             <?php require_once('./includes/months.php'); ?>
                             <?php require_once('./includes/days.php'); ?>
                             <?php require_once('./includes/years.php'); ?>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-wrapper">
+                    <div class="input-group only-child">
+                        <div class="checkbox-wrapper">
+                            <div class="checkbox">
+                                <input type="checkbox" id="cafe-subscription" />
+                                <div class="check-mark-wrapper"><?php echo file_get_contents("./images/check.svg"); ?></div>
+                            </div>
+                            <div class="checkbox-label">Subscribe to <strong>REF. CAFE</strong> newsletters.</div>
+                        </div>
+                        <div class="checkbox-wrapper">
+                            <div class="checkbox">
+                                <input type="checkbox" id="sports-subscription" />
+                                <div class="check-mark-wrapper"><?php echo file_get_contents("./images/check.svg"); ?></div>
+                            </div>
+                            <div class="checkbox-label">Subscribe to <strong>REF. SPORTS</strong> newsletters.</div>
                         </div>
                     </div>
                 </div>
