@@ -140,7 +140,8 @@ window.onload = function() {
       var phone = $("phone").value;
       var month = $("md-select-month").querySelector("select").value;
       var day = $("md-select-day").querySelector("select").value;
-      var dateOfBirth = month + " - " + day;
+      var year = $("md-select-year").querySelector("select").value;
+      var dateOfBirth = month + " - " + day + " - " + year;
       var country = $("md-select-country").querySelector("select").value;
 
       /** validate and send data */
