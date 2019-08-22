@@ -74,9 +74,7 @@ button {
   appearance: none;
   border: 0;
   padding: 1rem;
-  font-family: inherit;
   font-weight: 600;
-  font-size: inherit;
   background: #e8b42b;
   border: 2px solid #e8b42b;
   color: #fff;
@@ -90,6 +88,14 @@ button {
 button:hover {
   background: none;
   color: #000;
+}
+
+textarea,
+input,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 textarea:focus,
@@ -149,8 +155,6 @@ input[type="password"] {
   padding: 1rem;
   margin: 0.5rem 0;
   color: #000;
-  font-size: inherit;
-  font-family: inherit;
   width: 100%;
   box-sizing: border-box;
 }
@@ -274,8 +278,6 @@ input[type="password"] {
   -moz-appearance: none;
   appearance: none;
   padding: 10px;
-  font-size: inherit;
-  font-weight: inherit;
   border: 2px solid #e5e5e5;
   height: calc(100% - 2px);
 }
