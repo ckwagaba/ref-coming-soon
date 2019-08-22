@@ -145,15 +145,7 @@ window.onload = function() {
       var country = $("md-select-country").querySelector("select").value;
 
       /** validate and send data */
-      if (
-        isValid(firstName) &&
-        isValid(lastName) &&
-        isValid(email) &&
-        isValid(phone) &&
-        isValid(month) &&
-        isValid(day) &&
-        isValid(country)
-      ) {
+      if (isValid(firstName) && isValid(lastName) && isValid(email)) {
         var data = {
           formData: {
             firstName,
