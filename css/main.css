@@ -17,7 +17,11 @@
 
 body {
   margin: 0;
-  background: url("../images/bg-pattern.png");
+  background: url(../images/bg-pattern.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   color: #000;
   font-family: "Qanelas", "proxima-nova", Arial, Helvetica, sans-serif;
   display: flex;
