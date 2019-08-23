@@ -2,5 +2,6 @@ Options -Indexes
 
 RewriteEngine On
 
+RewriteRule ^get-email$ ./helpers/get-email.php [NC,L]
 RewriteRule ^save-customer$ ./helpers/save.php [NC,L]
 RewriteRule ^customer-information$ ./customers.php [NC,L]

@@ -164,66 +164,67 @@ window.onload = function() {
       const cafeSubscription = $("cafe-subscription").checked ? 1 : 0;
       const sportsSubscription = $("sports-subscription").checked ? 1 : 0;
 
-      /** validate and send data */
-      if (isValid(firstName) && isValid(lastName) && isValid(email)) {
-        const data = {
-          formData: {
-            firstName,
-            lastName,
-            email,
-            phone,
-            dateOfBirth,
-            country,
-            cafeSubscription,
-            sportsSubscription
-          }
-        };
+      emailExists(email, function(res) {
+        // email not duplicate
+        if (!res) {
+          /** validate and send data */
+          if (isValid(firstName) && isValid(lastName) && isValid(email)) {
+            const data = {
+              formData: {
+                firstName,
+                lastName,
+                email,
+                phone,
+                dateOfBirth,
+                country,
+                cafeSubscription,
+                sportsSubscription
+              }
+            };
 
-        /** spinner widget */
-        const spinner = _$("div");
-        spinner.classList.add("spinner");
+            /** spinner widget */
+            const spinner = _$("div");
+            spinner.classList.add("spinner");
 
-        // button label is spinner
-        submitButton.innerHTML = spinner.outerHTML;
+            // button label is spinner
+            submitButton.innerHTML = spinner.outerHTML;
 
-        // send data
-        ajaxRequest("POST", "./save-customer", data, function(res) {
-          if (res == 1) {
-            // success
-            $("form-feedback").classList.add("success");
-            $("form-feedback").innerHTML =
-              "Congratulations! You are now our loyal VIP customer.";
+            // send data
+            ajaxRequest("POST", "./save-customer", data, function(res) {
+              if (res == 1) {
+                // success
+                $("form-feedback").classList.add("success");
+                $("form-feedback").innerHTML =
+                  "Congratulations! You are now our loyal VIP customer.";
 
-            // allow user to read message
-            setTimeout(function() {
-              // refresh
-              window.location.href = "./";
-            }, 1000);
+                setTimeout(function() {
+                  // allow user to read message
+                  // redirect to congratulations page
+                  // or call pop up page and reset form
+                  window.location.href = "./";
+                }, 1000);
+              } else {
+                $("form-feedback").classList.add("failure");
+                $("form-feedback").innerHTML =
+                  "Something went wrong. Please try again.";
+                submitButton.innerHTML = "submit";
+                resetFeedbackText();
+              }
+            });
           } else {
+            // validation failure
             $("form-feedback").classList.add("failure");
             $("form-feedback").innerHTML =
-              "Something went wrong. Please try again.";
-
-            // reset message field
-            setTimeout(function() {
-              $("form-feedback").classList.remove("failure");
-              $("form-feedback").innerHTML = "&nbsp;";
-              // reset button label
-              submitButton.innerHTML = "submit";
-            }, 2000);
+              "Please provide the required details.";
+            resetFeedbackText();
           }
-        });
-      } else {
-        // validation failure
-        $("form-feedback").classList.add("failure");
-        $("form-feedback").innerHTML = "Please provide the required details.";
-
-        // reset message field
-        setTimeout(function() {
-          $("form-feedback").classList.remove("failure");
-          $("form-feedback").innerHTML = "&nbsp;";
-        }, 2000);
-      }
+        } else {
+          $("form-feedback").classList.add("failure");
+          $("form-feedback").innerHTML =
+            "Looks like you're subscribed already!";
+          resetFeedbackText();
+        }
+      });
     });
   }
 };
@@ -259,6 +260,23 @@ function isValid(data) {
 }
 
 /**
+ * check for duplicate email address
+ * @param {string} email
+ * @returns {boolean}
+ */
+function emailExists(email, callback) {
+  ajaxRequest("POST", "./get-email", { email }, function(res) {
+    if (res == 1) {
+      // duplicate
+      callback(true);
+    } else {
+      // not duplicate
+      callback(false);
+    }
+  });
+}
+
+/**
  * AJAX Request
  * @function
  * @param {string} type - request type: GET or POST
@@ -276,4 +294,14 @@ function ajaxRequest(type, url, data, onSuccess) {
     }
   };
   xhr.send(JSON.stringify(data));
+}
+
+/**
+ * reset feedback text
+ */
+function resetFeedbackText() {
+  setTimeout(function() {
+    $("form-feedback").classList.remove("failure");
+    $("form-feedback").innerHTML = "&nbsp;";
+  }, 2000);
 }
