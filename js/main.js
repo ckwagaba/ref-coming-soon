@@ -149,7 +149,11 @@ window.onload = function() {
     $("submit-button").addEventListener("click", function(event) {
       event.preventDefault();
 
-      const submitButton = this;
+      /** spinner widget */
+      const spinner = _$("div");
+      spinner.classList.add("spinner");
+      // button label is spinner
+      this.innerHTML = spinner.outerHTML;
 
       /** get data values */
       const firstName = $("first-name").value;
@@ -182,13 +186,6 @@ window.onload = function() {
               }
             };
 
-            /** spinner widget */
-            const spinner = _$("div");
-            spinner.classList.add("spinner");
-
-            // button label is spinner
-            submitButton.innerHTML = spinner.outerHTML;
-
             // send data
             ajaxRequest("POST", "./save-customer", data, function(res) {
               if (res == 1) {
@@ -207,7 +204,6 @@ window.onload = function() {
                 $("form-feedback").classList.add("failure");
                 $("form-feedback").innerHTML =
                   "Something went wrong. Please try again.";
-                submitButton.innerHTML = "submit";
                 resetFeedbackText();
               }
             });
@@ -303,5 +299,6 @@ function resetFeedbackText() {
   setTimeout(function() {
     $("form-feedback").classList.remove("failure");
     $("form-feedback").innerHTML = "&nbsp;";
+    $("submit-button").innerHTML = "submit";
   }, 2000);
 }
