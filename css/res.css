@@ -29,4 +29,12 @@
   main .wrapper {
     padding: 2rem;
   }
+
+  .social {
+    justify-content: space-between;
+  }
+
+  .social a {
+    margin: 0;
+  }
 }
