@@ -36,17 +36,15 @@ a:hover {
 header {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 3rem;
+  padding: 3rem 5rem;
 }
 
 main {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  padding: 3rem;
+  padding: 3rem 5rem;
 }
 
 footer {
@@ -132,20 +130,18 @@ button:focus {
 }
 
 .title {
-  padding: 2rem;
+  padding: 2rem 0;
 }
 
 .heading {
   font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .sub-heading {
   font-size: 1.2rem;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .wrapper {
@@ -182,9 +178,9 @@ input[type="password"] {
 }
 
 .main-footer-copy {
-  text-align: center;
   margin-top: 1rem;
   color: #9b9b9b;
+  text-transform: capitalize;
 }
 
 .main-footer-logos {

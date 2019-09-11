@@ -14,10 +14,10 @@ require_once('./includes/meta.php');
             <?php echo file_get_contents("./images/logo.svg"); ?>
         </div>
         <div class="title">
-            <div class="sub-heading">Stay Tuned</div>
-            <div class="heading">We are launching soon!</div>
+            <div class="sub-heading">Coming Soon</div>
+            <div class="heading">Get 20% OFF your online order.</div>
             <div class="main-footer-copy">
-                Be notified first when the REF. website goes live. <br />Get a <strong>FLAT 15%</strong> Discount Shopping Voucher as our Loyal VIP Customer.
+            Claim your discount by signing up for our beta testing phase.
             </div>
         </div>
     </header>
