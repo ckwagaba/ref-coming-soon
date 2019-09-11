@@ -18,11 +18,11 @@ window.onload = function() {
     /** get data values */
     const email = $("email").value;
 
-    emailExists(email, function(res) {
-      // email not duplicate
-      if (!res) {
-        /** validate and send data */
-        if (isValid(email)) {
+    /** validate and send data */
+    if (validateEmail(email)) {
+      /** check for duplicate email */
+      emailExists(email, function(res) {
+        if (!res) {
           const data = {
             formData: {
               email
@@ -45,17 +45,18 @@ window.onload = function() {
             }
           });
         } else {
-          // validation failure
           $("form-feedback").classList.add("failure");
-          $("form-feedback").innerHTML = "Please provide the required details.";
+          $("form-feedback").innerHTML =
+            "Looks like you're subscribed already!";
           resetFeedbackText();
         }
-      } else {
-        $("form-feedback").classList.add("failure");
-        $("form-feedback").innerHTML = "Looks like you're subscribed already!";
-        resetFeedbackText();
-      }
-    });
+      });
+    } else {
+      // validation failure
+      $("form-feedback").classList.add("failure");
+      $("form-feedback").innerHTML = "Please provide a valid email address.";
+      resetFeedbackText();
+    }
   });
 };
 
@@ -76,17 +77,12 @@ function _$(tagName) {
 }
 
 /**
- * validate data
- * @param {string} data
+ * validate email
+ * @param {string} email
  */
-function isValid(data) {
-  if (Number(data) !== 0) {
-    // type casting: non-numeric or greater than 0
-    return true;
-  } else {
-    // the default option - 0
-    return false;
-  }
+function validateEmail(email) {
+  var regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return regex.test(String(email).toLowerCase());
 }
 
 /**
