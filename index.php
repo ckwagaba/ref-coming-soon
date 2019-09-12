@@ -4,6 +4,7 @@ require_once('./includes/meta.php');
 <div id="hero">
     <div>
         <?php
+        echo file_get_contents("./images/logo-white.svg");
         echo file_get_contents("./images/logo-arrow.svg");
         ?>
     </div>

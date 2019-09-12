@@ -1,19 +1,51 @@
 @media only screen and (max-width: 640px) {
-  header {
-    padding-top: 0;
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  header,
+  main {
+    padding: 1rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  input {
+    text-align: center;
   }
 
   footer {
     padding: 0;
   }
 
-  .wrapper {
-    width: 100%;
-    padding: 2rem;
+  #hero {
+    height: 17rem;
+    background-position: top left;
   }
 
-  .input-wrapper {
-    grid-template-columns: 1fr;
+  #hero > div {
+    padding: 1rem;
+  }
+
+  #hero svg {
+    width: 2rem;
+  }
+
+  #hero svg:first-child {
+    display: unset;
+  }
+
+  .logo-container {
+    display: none;
+  }
+
+  .form-wrapper {
+    width: 100%;
+  }
+
+  .input-field {
+    flex-direction: column;
   }
 
   .main-footer-logos {

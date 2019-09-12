@@ -82,6 +82,7 @@ select,
 button {
   font-family: inherit;
   font-size: inherit;
+  border-radius: 0;
 }
 
 textarea:focus,
@@ -104,17 +105,22 @@ button:focus {
 #hero > div {
   padding: 5rem;
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
   flex: 1;
 }
 
 #hero svg {
-  align-self: flex-end;
   width: 3rem;
   height: auto;
 }
 
+#hero svg:first-child {
+  display: none;
+}
+
 #main {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   background: url(../images/bg-pattern.png) no-repeat center center fixed;
@@ -228,6 +234,10 @@ input[type="password"] {
 .links svg:last-of-type {
   width: auto;
   height: 3rem;
+}
+
+.form-wrapper {
+  width: 70%;
 }
 
 #form-feedback {
