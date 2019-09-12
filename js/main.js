@@ -4,6 +4,16 @@
  */
 window.onload = function() {
   /**
+   * randomize background image
+   */
+  const currentImage = Math.floor(Math.random() * 2);
+  const imageUrls = [
+    "url(images/basket-baller.jpg)",
+    "url(images/juice-bottle.jpg)"
+  ];
+  $("hero").style.backgroundImage = imageUrls[currentImage];
+
+  /**
    * clicking the submit button
    */
   $("submit-button").addEventListener("click", function(event) {
